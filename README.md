@@ -1,11 +1,20 @@
-Hi! 👋
+all_odd = true
+[1,2,3].each do |number|
+  if number.even? # Will evaluate to false for 1, true for 2, false for 3
+    all_odd = false
+  end
+end
 
-You've opened the IDE Sandbox. 🎉
+all_odd = [1,3].all? do |number|
+  number.odd? # Will evaluate to true for 1, true for 3
+end #=> true
+all_odd #=> true
 
-The Sandbox is an environment that you can access on "readme" and "code-along" lessons in Learn. It's a great place to experiment with code when you're not working on a "lab" (labs open the IDE In Browser).
+all_odd = [1,2,3].all? do |number|
+  number.odd? # Will evaluate to true for 1, false for 2, true for 3
+end #=> false
+all_odd #=> false
 
-The work you do in the Sandbox will be saved from lesson to lesson, and is automatically saved on your behalf to a repository in your GitHub account called `learn-co-sandbox`.
+[1,3].none?{|i| i.even?} #=> true
 
-Please DO NOT touch this repository in GitHub, as it will affect your Sandbox experience, and potentially cause your work to be out of sync.
-
-To learn more about the Sandbox, please visit http://help.learn.co/technical-support/learn-ide-in-browser/ide-in-browser-sandbox.
+[1,3].all?{|i| i.odd?}
